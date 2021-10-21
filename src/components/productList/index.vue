@@ -44,7 +44,7 @@
         },
         data() {
             return {
-				window: this.window,
+				window: window,
 			}
         },
 		methods: {
