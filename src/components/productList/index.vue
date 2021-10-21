@@ -9,7 +9,7 @@
                 <el-link type="primary"
                          class="item_name"
                          :underline="false"
-                         :href="window.location.protocol + '//' + window.location.host + ':8080/#/homepage/detail?productId='+item.productId">{{item.name}}</el-link>
+                         :href="window.location.protocol + '//' + window.location.host + '/#/homepage/detail?productId='+item.productId">{{item.name}}</el-link>
                 <el-rate
                         v-model="item.score.toFixed(1)"
                         disabled
@@ -44,7 +44,7 @@
         },
         data() {
             return {
-				window: window,
+				window: this.window,
 			}
         },
 		methods: {
