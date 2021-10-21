@@ -43,7 +43,9 @@
 			}
         },
         data() {
-            return {}
+            return {
+				window: window,
+			}
         },
 		methods: {
 			onDelete(productId) {
