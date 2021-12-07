@@ -18,10 +18,19 @@
               listData: []
           }
         },
+		methods: {
+		},
         created() {
             getHot(100, sessionStorage.getItem('username')).then((res) => {
-                if(res.status === 200) {
-                    this.listData = res.data.products
+                if(res.status === 200 && res.data.success) {
+					// res.data.products.forEach((item, index, arr) => {
+					// 	let _score = item.score
+					// 	let str = _score.toFixed(1)
+					// 	let res = parseFloat(str)
+					// 	item.score = res
+					// })
+					// console.log(res.data.products)
+					this.listData = res.data.products
                 }
             })
         }

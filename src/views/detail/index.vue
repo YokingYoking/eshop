@@ -56,13 +56,13 @@
           onRate(newScore) {
               // console.log(newScore)
               this.productDetail.score = newScore
-              rate(this.$route.query.productId,newScore.toFixed(1), sessionStorage.getItem('username')).then( res => {
-                  if(res.data.success) {
-                      this.$message.success(res.data.message)
-                  }
-              } ).catch( err => {
-                  this.$message.error(err)
-              })
+              // rate(this.$route.query.productId,newScore.toFixed(1), sessionStorage.getItem('username')).then( res => {
+              //     if(res.data.success) {
+              //         this.$message.success(res.data.message)
+              //     }
+              // } ).catch( err => {
+              //     this.$message.error(err)
+              // })
           },
             loadData(){
                 getDetail(this.$route.query.productId).then( res => {
@@ -82,14 +82,11 @@
 				let amount = this.amount
 				let that = this
 				add2Cart(username, productId, amount).then(res => {
-					if (res.status === 200 && res.data.success == 'true') {
-						// console.log(res.data.products)
+					if (res.status === 200 && res.data.success) {				
 					    this.$message.success('Add To Cart Successfully')
 					} else {
 						this.$message.error(res.data.message)
 					}
-				}).catch(err => {
-					
 				})
 			},
         },
